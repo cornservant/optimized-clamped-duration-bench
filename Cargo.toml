@@ -1,0 +1,17 @@
+[package]
+name = "optimized-clamped-duration-bench"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = "0.10.2"
+rand_distr = "0.6.0"
+
+[dev-dependencies]
+criterion = "0.8.2"
+
+
+[[bench]]
+name = "benchmark"
+path = "benches/benchmarks.rs"
+harness = false
