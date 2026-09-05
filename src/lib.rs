@@ -12,7 +12,7 @@ pub struct Params {
     pub initial_velocity: f64,
 }
 
-pub fn generate_input() -> Vec<Params> {
+pub fn generate_input(num_samples: usize) -> Vec<Params> {
     use rand_distr::Distribution;
     use rand_distr::Exp;
     let mut rng = rand::rng();
@@ -21,7 +21,7 @@ pub fn generate_input() -> Vec<Params> {
     let dist_e = Exp::new(1.0 / 0.0001).unwrap();
     let dist_v = Exp::new(1.0 / 2.0).unwrap();
     let dist_t = Exp::new(1.0 / 10.0).unwrap();
-    (0..500)
+    (0..num_samples)
         .map(|_| Params {
             damping_ratio: dist_d.sample(&mut rng),
             stiffness: dist_s.sample(&mut rng),

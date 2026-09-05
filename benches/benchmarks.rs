@@ -2,7 +2,8 @@ use criterion::{criterion_group, criterion_main, Criterion};
 use optimized_clamped_duration_bench::*;
 
 fn criterion_benchmark(c: &mut Criterion) {
-    let input = generate_input();
+    let num_samples = 1000;
+    let input = generate_input(num_samples);
 
     let mut group = c.benchmark_group("Spring::clamped_duration()");
     group.bench_with_input("baseline", &input, |b, input| {
