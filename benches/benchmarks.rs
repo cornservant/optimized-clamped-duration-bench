@@ -4,7 +4,7 @@ use optimized_clamped_duration_bench::*;
 fn criterion_benchmark(c: &mut Criterion) {
     let input = generate_input();
 
-    let mut group = c.benchmark_group("day01::solve1");
+    let mut group = c.benchmark_group("Spring::clamped_duration()");
     group.bench_with_input("baseline", &input, |b, input| {
         b.iter(|| {
             input.iter().copied().for_each(
